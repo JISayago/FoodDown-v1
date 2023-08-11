@@ -2,7 +2,8 @@ module.exports = {
     content: ['./src/**/*.{html,js}'],
     theme: {
       colors: {
-          'primary-red': '#BD0003',
+        'primary-red': '#BD0003',
+        'light-red':'#cdb4b0',
           'primary-white': '#FFFFFF'
       },
       fontFamily: {
@@ -15,7 +16,7 @@ module.exports = {
           '9xl': '128rem',
         },
         borderRadius: {
-          '4xl': '2rem',
+          '4xl': '80px',
         }
       }
     },

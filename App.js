@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading/>
+    return <View></View>
   } else {
     return (
       <NavigationContainer >
