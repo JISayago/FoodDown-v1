@@ -9,9 +9,12 @@ import { StatusBar } from "expo-status-bar";
 import { useFonts, Imprima_400Regular } from '@expo-google-fonts/imprima';
 import { useState } from "react";
 
+
 export default function LoginScren() {
     const twl = create(require(`../tailwind.config.js`));
     const [isChecked, setChecked] = useState(false);
+    const textButton = "Ingresar";
+    const classButton = ""
     const formik = useFormik({
         initialValues: {
             user: '',
@@ -39,8 +42,8 @@ export default function LoginScren() {
                         <View style={tw`h-2/3 w-full justify-end`}>
                             <View style={[tw`flex bg-white p-6 pt-11 h-3/5 items-center `,twl`rounded-t-4xl`]}>
                                 <TextInput placeholder="Usuario ..." placeholderTextColor="#cdb4b0" style={[tw`p-2 w-11/12 border-solid border-b text-xl` , twl`border-primary-red text-primary-red`]}></TextInput>
-                                <TextInput placeholder="Contraseñña ..." placeholderTextColor="#cdb4b0" style={[tw`p-2 w-11/12 border-solid border-b text-xl` , twl`border-primary-red text-primary-red`]}></TextInput>
-                                <View style={tw`flex flex-row justify-around mt-10 w-3/5 items-center`}>
+                                <TextInput placeholder="Contraseña ..." placeholderTextColor="#cdb4b0" style={[tw`p-2 w-11/12 border-solid border-b text-xl` , twl`border-primary-red text-primary-red`]}></TextInput>
+                                <View style={tw`flex flex-row justify-around mt-10 w-11/12 items-center`}>
                                     <Text style={tw`text-xl`}>Mantener sesión iniciada</Text> 
                                     <Checkbox
                                         style={tw``}
@@ -49,6 +52,7 @@ export default function LoginScren() {
                                         color={isChecked ? '#BD0003' : '#cdb4b0'}
                                     />
                                 </View>
+                                <ButtonPresseable classButton={classButton} textButton={textButton} goTo={goTo} />
                             </View>
                         </View>
                     </ImageBackground>
