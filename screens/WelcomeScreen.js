@@ -29,8 +29,8 @@ export default function WelcomeScreen() {
       </View>
       <View style={tw`h-3/5 justify-end p-5 `}>
         <View style={tw`flex justify-around items-center h-1/2 w-full` }>
-          <ButtonPresseable classButton={ButtonClasses.Primary} textButton={"Ingresar"}  goTo={goTo } />
-          <ButtonPresseable classButton={ButtonClasses.Secondary} textButton={"Registrarse"} goTo={goTo } />
+          <ButtonPresseable sizeH={"1/4"} sizeW={"3/5"} classButton={ButtonClasses.Primary} textButton={"Ingresar"}  goTo={goTo } />
+          <ButtonPresseable sizeH={"1/4"} sizeW={"3/5"} classButton={ButtonClasses.Secondary} textButton={"Registrarse"} goTo={goTo } />
         </View>
       </View>
     </ImageBackground>
