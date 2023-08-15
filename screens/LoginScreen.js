@@ -1,4 +1,3 @@
-import { useFormik } from "formik";
 import { Formik } from 'formik';
 import { ImageBackground, Text, TextInput, View,StyleSheet, Pressable } from "react-native";
 import Checkbox from 'expo-checkbox';
@@ -6,16 +5,32 @@ import tw,{create} from 'twrnc';
 import Logo from "../components/Logo.js";
 import ButtonPresseable from "../components/ButtonPresseable.js";
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import  ButtonClasses  from "../config/ButttonStyles.js";
+import Data from "../config/data.json";
+import { useNavigation } from "@react-navigation/native";
 
 export default function LoginScren() {
+    
     const twl = create(require(`../tailwind.config.js`));
+    const navigation = useNavigation();
+    
     const [isChecked, setChecked] = useState(false);
+    const [usuarios, setUsuarios] = useState([]);
+
+    useEffect(() => {
+       setUsuarios(Data.users)
+    }, [])
+
+    const login = (values) => { 
+        usuarios.map(usu => {
+            if (usu.username === values.usuario && usu.password === values.password) return navigation.navigate('Main');
+    })
+}    
     return (
             <Formik
                 initialValues={{ usuario: '' ,password:'',recuerdame:false}}
-                onSubmit={values => console.log(values)}>
+            onSubmit={values => login(values)}>
                  {({ handleChange, handleBlur, handleSubmit,setFieldValue, values }) => (
                 <View style={tw`flex w-full h-full`}>
                     <ImageBackground source={require("../assets/images/fooddown_bg.jpg")} style={tw`flex w-full h-full`}>

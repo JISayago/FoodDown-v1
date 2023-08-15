@@ -10,6 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
+import MainScreen from './screens/MainScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,11 @@ export default function App() {
           }} />
           <Stack.Screen name="Login"
             component={LoginScreen}
+            options={{
+            headerShown:false,
+          }} />
+          <Stack.Screen name="Main"
+            component={MainScreen}
             options={{
             headerShown:false,
           }} />
